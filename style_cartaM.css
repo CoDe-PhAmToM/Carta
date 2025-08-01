@@ -1,0 +1,212 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f0ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+    color: #6a3093;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nickname {
+    font-size: 1.8rem;
+    margin-top: 0;
+    color: #9d65c9;
+    font-style: italic;
+}
+
+.date {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #9d65c9;
+}
+
+.btn {
+    background-color: #9c64d4;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(156, 100, 212, 0.3);
+    margin-bottom: 40px;
+}
+
+.btn:hover {
+    background-color: #7e4db3;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(156, 100, 212, 0.4);
+}
+
+.letter-container {
+    display: none;
+    width: 100%;
+    max-height: 70vh;
+    background-image: url('flower_morada.jpg');
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #8000ff;
+    overflow-y: auto;
+    position: relative;
+}
+
+.letter-container:before {
+    content: "";
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(to right, #9c64d4, #c9a0ff);
+    border-radius: 10px 10px 0 0;
+    z-index: 2;
+}
+
+.letter-content {
+    padding: 20px;
+}
+
+.photo-frame {
+    width: 60%;
+    max-width: 300px;
+    margin: 0 auto 20px;
+    border: 8px solid #d9b3ff;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.couple-photo {
+    width: 100%;
+    border-radius: 5px;
+    display: block;
+}
+
+.letter {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border: 2px solid #c489ff;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.letter:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(to right, #9c64d4, #c9a0ff);
+    border-radius: 10px 10px 0 0;
+}
+
+.signature {
+    font-style: italic;
+    text-align: right;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #6a3093;
+}
+
+/* Scrollbar personalizada */
+.letter-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.letter-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.letter-container::-webkit-scrollbar-thumb {
+    background: #c9a0ff;
+    border-radius: 10px;
+}
+
+.letter-container::-webkit-scrollbar-thumb:hover {
+    background: #9c64d4;
+}
+
+/* Efectos de animación */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.show-letter {
+    display: block !important;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Decoraciones */
+.flower {
+    position: absolute;
+    font-size: 20px;
+    opacity: 0.6;
+    animation: float 5s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+.hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    font-size: 20px;
+    color: #b388ff;
+    animation: fall 10s linear infinite;
+    opacity: 0;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
